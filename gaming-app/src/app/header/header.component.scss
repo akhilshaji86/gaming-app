@@ -1,0 +1,111 @@
+.header-conatiner {
+    display: flex;
+    align-items: center;
+    height: 80px;
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    width: 20%;
+    margin-left: 15%;
+    a {
+        place-self: center;
+        padding: 10px;
+        &:hover {
+            background-color: #6f6767;
+        }
+        &:hover,
+        &.active {
+            color: #df6a2e;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    }
+}
+.account-container {
+    position: relative;
+    width: 55%;
+    margin-left: 10%;
+    background-color: black;
+    padding-left: 30px;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    height: 100%;
+    &::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: -1px;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 0px 0 80px 25px;
+        border-color: transparent transparent #2a2a2a transparent;
+        transform: rotate(180deg);
+    }
+}
+.bg-orange {
+    position: relative;
+    &:hover {
+        background-color: #df6a2e;
+    }
+}
+.has-before {
+    background-color: #6f6767;
+    &:hover {
+        background-color: #2a2a2a;
+        &::before {
+            border-color: transparent transparent #2a2a2a transparent;
+        }
+    }
+    &::before {
+        content: "";
+        position: absolute;
+        bottom: 10px;
+        left: 124px;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 0px 0 47px 6px;
+        border-color: transparent transparent #6f6767 transparent;
+        &:hover {
+            background-color: #6f6767;
+        }
+    }
+}
+.slanted-black-line {
+    position: absolute;
+    bottom: 10px;
+    left: 125px;
+    width: 4px;
+    height: 44px;
+    background-color: black;
+    transform: skew(-12deg);
+    -moz-transform: skew(-12deg);
+    -webkit-transform: skew(-12deg);
+}
+.circle {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #6f6767;
+    position: absolute;
+    top: 2px;
+    right: 4px;
+}
+.btn-container {
+    button {
+        border: 1px solid white;
+        border-radius: 15px;
+        margin-right: 5px;
+        padding-top: 3px;
+        padding-bottom: 3px;
+    }
+}
+.server-time {
+    top: -13px;
+    width: max-content;
+    font-size: 10px;
+    color: #afabab;
+}

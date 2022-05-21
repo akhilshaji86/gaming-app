@@ -1,0 +1,21 @@
+.carousel-container {
+    // width: 50%;
+    padding: 10px;
+    max-width: 50vw;
+}
+
+.carousel-caption {
+    position: absolute;
+    bottom: 0px;
+    right: 0;
+    left: 0;
+    text-align: left;
+    padding: 20px;
+    z-index: 10;
+    color: #fff;
+    background: #00000073;
+    width: 100%;
+    h3 {
+        color: #df6a2e;
+    }
+}

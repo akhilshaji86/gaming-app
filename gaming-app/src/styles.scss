@@ -1,0 +1,47 @@
+@import "~@angular/material/theming";
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+/* You can add global styles to this file, and also import other style files */
+body {
+    color: white;
+    background-color: #2a2a2a;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+.flex-row {
+    flex-direction: row;
+}
+.p-lr-10 {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.pl-10 {
+    padding-left: 10px;
+}
+.p-10 {
+    padding: 10px;
+}
+.pr-25 {
+    padding-right: 25px;
+}
+.pt-10 {
+    padding-top: 10px;
+}
+.color-gold {
+    color: gold;
+}
+.header-btn {
+    background-color: #2a2a2a;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    &:hover {
+        background-color: #6f6767;
+    }
+}
+.bg-orange {
+    background-color: #e87321;
+}
+/* Add application styles & imports to this file! */

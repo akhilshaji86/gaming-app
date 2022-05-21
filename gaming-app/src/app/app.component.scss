@@ -1,0 +1,28 @@
+ngb-carousel .wrapper {
+    position: relative;
+    height: 0;
+    padding-top: 55%; /* Keep ratio for 900x500 images */
+}
+
+ngb-carousel .wrapper > img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.carousel-container {
+    display: flex;
+    justify-content: space-around;
+    position: relative;
+    .carousel-overlay {
+        position: absolute;
+        color: gold;
+        top: 30%;
+        left: calc(50vw + 50px );
+        z-index: 1;
+        width: 230px;
+        line-height: 1.5;
+    }
+}
