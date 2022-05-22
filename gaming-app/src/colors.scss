@@ -1,0 +1,17 @@
+:root {
+    $text-color: white;
+    $background-color: #2a2a2a;
+    $background-color-primary: #aaaaaa;
+    $background-color-secondary: #6f6767;
+    $orange-background-color: #df6a2e;
+    $background-color-dark: black;
+}
+// $theme: "dark";
+@mixin themeColorSelector($themeName) {
+    $theme: $themeName !global;
+    $text-color: if($themeName == "dark", white, black) !global;
+    $background-color-dark: if($themeName == "dark", black, #898787) !global;
+    // $background-color-primary: if($themeName == "dark",,#aaaaaa);
+
+    $background-color: if($themeName == "dark", #2a2a2a, rgb(195, 195, 195)) !global;
+}

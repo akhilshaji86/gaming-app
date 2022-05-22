@@ -1,7 +1,10 @@
+@import "../../styles.scss";
+$background: var(--background-color);
 .header-conatiner {
     display: flex;
     align-items: center;
     height: 80px;
+    background-color: var(--background-color-light);
 }
 nav {
     display: flex;
@@ -12,7 +15,7 @@ nav {
         place-self: center;
         padding: 10px;
         &:hover {
-            background-color: #6f6767;
+            background-color: var(--background-color-secondary);
         }
         &:hover,
         &.active {
@@ -22,17 +25,18 @@ nav {
         }
     }
 }
-.account-container {
+::ng-deep .account-container {
+    $var: var(--background-color);
     position: relative;
     width: 55%;
     margin-left: 10%;
-    background-color: black;
+    background-color: var(--background-color-dark);
     padding-left: 30px;
     display: flex;
     align-content: center;
     align-items: center;
     height: 100%;
-    &::before {
+    &::after {
         content: "";
         position: absolute;
         bottom: 0;
@@ -41,8 +45,13 @@ nav {
         height: 0;
         border-style: solid;
         border-width: 0px 0 80px 25px;
-        border-color: transparent transparent #2a2a2a transparent;
+        border-color: transparent transparent #262626 transparent;
         transform: rotate(180deg);
+    }
+    &.white-theme {
+        &::after {
+            border-color: transparent transparent #dadada transparent;
+        }
     }
 }
 .bg-orange {
@@ -52,51 +61,60 @@ nav {
     }
 }
 .has-before {
-    background-color: #6f6767;
+    background-color: var(--background-color-secondary);
     &:hover {
-        background-color: #2a2a2a;
+        background-color: var(--background-color);
         &::before {
-            border-color: transparent transparent #2a2a2a transparent;
+            border-color: transparent transparent var(--background-color) transparent;
         }
     }
     &::before {
         content: "";
         position: absolute;
         bottom: 10px;
-        left: 124px;
+        left: 160px;
         width: 0;
         height: 0;
         border-style: solid;
-        border-width: 0px 0 47px 6px;
-        border-color: transparent transparent #6f6767 transparent;
+        border-width: 0px 0 44px 7px;
+        border-color: transparent transparent var(--background-color-secondary) transparent;
         &:hover {
-            background-color: #6f6767;
+            background-color: var(--background-color-secondary);
         }
     }
 }
 .slanted-black-line {
     position: absolute;
     bottom: 10px;
-    left: 125px;
+    left: 160px;
     width: 4px;
     height: 44px;
     background-color: black;
-    transform: skew(-12deg);
-    -moz-transform: skew(-12deg);
-    -webkit-transform: skew(-12deg);
+    transform: skew(-10deg);
+    -moz-transform: skew(-10deg);
+    -webkit-transform: skew(-10deg);
 }
 .circle {
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    background-color: #6f6767;
+    background-color: var(--background-color-secondary);
     position: absolute;
-    top: 2px;
+    top: 4px;
     right: 4px;
+    &.flag {
+        left: 5px;
+        background: none;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-image: url(/assets/images/flag.png);
+    }
 }
+
 .btn-container {
     button {
-        border: 1px solid white;
+        border: 1px solid var(--text-color);
         border-radius: 15px;
         margin-right: 5px;
         padding-top: 3px;
@@ -105,7 +123,47 @@ nav {
 }
 .server-time {
     top: -13px;
+    left: 20px;
     width: max-content;
     font-size: 10px;
-    color: #afabab;
+    color: var(--background-color-secondary);
+}
+
+::ng-deep {
+    .mat-menu-content:not(:empty) {
+        background-color: (--background-color);
+    }
+    .mat-menu-panel {
+        border-radius: 0px !important;
+    }
+    .mat-menu-content {
+        .circle {
+            &.flag {
+                top: 13px;
+            }
+        }
+    }
+}
+.mat-menu-item {
+    background-color: var(--background-color);
+    color: white;
+    &:hover {
+        background-color: var(--background-color-secondary);
+        color: white;
+    }
+}
+.plus {
+    font-size: 45px;
+    font-weight: bold;
+    position: absolute;
+    left: -6px;
+    bottom: 0px;
+    z-index: 1;
+}
+.outsid-arrow {
+    background-color: #df6a2e;
+    height: 100%;
+    display: flex;
+    color: black;
+    align-items: center;
 }

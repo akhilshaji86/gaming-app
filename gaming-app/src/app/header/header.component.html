@@ -6,32 +6,66 @@
         <a class="mat-button" [class.active]="selectedTab==='settings'" (click)="selectedTab='settings'">
             <span class="mat-button-wrapper">Settings </span>
         </a>
-        <a class="mat-button" [class.active]="selectedTab==='help'" (click)="selectedTab='help'">
-            <span class="mat-button-wrapper">Help </span>
+        <a class="mat-button" [matMenuTriggerFor]="helpMenu">
+            <span class="mat-button-wrapper d-flex ">Help
+                <span class="material-icons">
+                    arrow_drop_down
+                </span>
+                <mat-menu #helpMenu="matMenu">
+                    <button mat-menu-item>Item 1</button>
+                    <button mat-menu-item>Item 2</button>
+                </mat-menu>
+            </span>
         </a>
 
+
     </nav>
-    <div class="account-container d-flex justify-content-lg-around">
-        <div class="d-flex flex-column p-lr-10">
-            <span> Account number : {{accountNumber}} </span>
+    <div class="account-container d-flex justify-content-lg-around" [class.white-theme]="theme==='white-theme'">
+        <div class="d-flex flex-column p-lr-10 text-right">
+            <span> Account Number : {{accountNumber}} </span>
             <span>cash : <span class="color-gold pl-10"> ₱ {{currency}}</span></span>
         </div>
         <div class="d-flex p-10 position-relative">
-            <span class="p-lr-10 header-btn bg-orange"> Quick Deposit </span>
-            <span class="p-lr-10 header-btn has-before">Wallet</span>
+            <span class="plus"> +</span>
+            <span class="p-lr-10 header-btn bg-orange text-uppercase"> <b class="pl-3">Quick Deposit </b> </span>
+            <span class="p-lr-10 header-btn has-before text-uppercase"><b> Wallet </b></span>
             <div class="slanted-black-line"></div>
         </div>
         <div class="position-relative">
-            <small class="position-absolute server-time">server time {{dateTime}}</small>
+            <small class="position-absolute server-time">server time {{dateTime| date :'dd/mm/yyyy h:mm aa' }}</small>
             <div class="btn-container pt-10 d-flex">
-                <button class="mat-button mat-button-wrapper position-relative p-lr-10 pr-25">
-                    Dark mode
+                <button class="mat-button mat-button-wrapper position-relative p-lr-10 pr-25"
+                    (click)="toggleTheme(theme)">
+                    {{theme}}
                     <div class="circle"></div>
                 </button>
-                <button class="mat-button position-relative p-lr-10 pr-25">
-                    <div class="circle"></div>ENG
+                <button class="mat-button position-relative p-lr-10 d-flex align-items-center "
+                    [matMenuTriggerFor]="flagMenu">
+                    <div class="flag circle" [ngStyle]="{'background-image': 'url('+countryImg+')'}"></div>
+                    <div class="lang pl-4"> {{selectedLang}}</div>
+                    <span class="material-icons">
+                        arrow_drop_down
+                    </span>
+                    <mat-menu #flagMenu="matMenu">
+                        <button class="d-flex position-relative justify-content-center" mat-menu-item
+                            (click)="countryImg = 'assets/images/flags/us.png';">
+                            <div class="flag circle"
+                                [ngStyle]="{'background-image': 'url(../../assets/images/flags/us.png)'}"></div>
+                            <span>EN-US</span>
+                        </button>
+                        <button class="d-flex position-relative justify-content-center" mat-menu-item
+                            (click)="countryImg = 'assets/images/flags/uk.png';">
+                            <div class="flag circle"
+                                [ngStyle]="{'background-image': 'url(../../assets/images/flags/uk.png)'}"></div>
+                            <span>EN-UK</span>
+
+                        </button>
+                    </mat-menu>
                 </button>
             </div>
         </div>
+    </div>
+    <div class="material-icons outsid-arrow">
+        arrow_drop_down
     </div>
 </div>

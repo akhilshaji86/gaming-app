@@ -1,9 +1,19 @@
 @import "~@angular/material/theming";
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+// @import "./colors.scss";
+:root {
+    --text-color: white;
+    --background-color: #2a2a2a;
+    --background-color-primary: #aaaaaa;
+    --background-color-secondary: #6f6767;
+    --orange-background-color: #df6a2e;
+    --background-color-dark: black;
+}
 /* You can add global styles to this file, and also import other style files */
 body {
-    color: white;
-    background-color: #2a2a2a;
+    // @include themeColorSelector("dark");
+    color: var(--text-color);
+    background-color:  var(--background-color);
 }
 
 .flex-column {
@@ -32,16 +42,19 @@ body {
     color: gold;
 }
 .header-btn {
-    background-color: #2a2a2a;
-    color: white;
+    background-color: var(--background-color);
+    color:  var(--text-color);
     border: none;
     padding: 10px;
     cursor: pointer;
     &:hover {
-        background-color: #6f6767;
+        background-color:  var(--background-color-secondary);
     }
 }
 .bg-orange {
-    background-color: #e87321;
+    background-color: #df6a2e;
+}
+button:focus {
+    outline: none;
 }
 /* Add application styles & imports to this file! */
