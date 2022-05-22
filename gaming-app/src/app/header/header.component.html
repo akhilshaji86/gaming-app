@@ -36,7 +36,7 @@
             <div class="btn-container pt-10 d-flex">
                 <button class="mat-button mat-button-wrapper position-relative p-lr-10 pr-25"
                     (click)="toggleTheme(theme)">
-                    {{theme}}
+                    {{theme==='dark-theme'?'Dark Mode':'Light Mode'}}
                     <div class="circle"></div>
                 </button>
                 <button class="mat-button position-relative p-lr-10 d-flex align-items-center "

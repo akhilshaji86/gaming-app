@@ -49,6 +49,9 @@ nav {
         transform: rotate(180deg);
     }
     &.white-theme {
+        .circle {
+            background-color: #fff;
+        }
         &::after {
             border-color: transparent transparent #dadada transparent;
         }
@@ -131,7 +134,7 @@ nav {
 
 ::ng-deep {
     .mat-menu-content:not(:empty) {
-        background-color: (--background-color);
+        background-color: var(--background-color);
     }
     .mat-menu-panel {
         border-radius: 0px !important;
@@ -146,10 +149,10 @@ nav {
 }
 .mat-menu-item {
     background-color: var(--background-color);
-    color: white;
+    color: var(--text-color);
     &:hover {
         background-color: var(--background-color-secondary);
-        color: white;
+        color: var(--text-color);
     }
 }
 .plus {

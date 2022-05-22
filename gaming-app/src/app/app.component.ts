@@ -13,7 +13,7 @@ export class AppComponent {
   title = 'gaming-app';
   themes = {
     'white-theme': {
-      '--text-color': 'black',
+      '--text-color': '#000000',
       '--background-color': '#c3c3c3',
       '--background-color-primary': '#aaaaaa',
       '--background-color-secondary': '#6f6767',
@@ -22,7 +22,7 @@ export class AppComponent {
       '--background-color-light': '#dadada',
     },
     'dark-theme': {
-      '--text-color': 'white',
+      '--text-color': '#ffffff',
       '--background-color': '#2a2a2a',
       '--background-color-primary': '#aaaaaa',
       '--background-color-secondary': '#6f6767',
