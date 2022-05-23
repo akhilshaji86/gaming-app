@@ -7,7 +7,7 @@
 nav {
     display: flex;
     justify-content: space-between;
-    width: 20%;
+    width: 15%;
     margin-left: 15%;
     a {
         place-self: center;
@@ -26,7 +26,7 @@ nav {
 ::ng-deep .account-container {
     $var: var(--background-color);
     position: relative;
-    width: 55%;
+    width: 60%;
     margin-left: 10%;
     background-color: var(--background-color-dark);
     padding-left: 30px;
