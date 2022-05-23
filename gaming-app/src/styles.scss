@@ -14,6 +14,7 @@ body {
     // @include themeColorSelector("dark");
     color: var(--text-color);
     background-color: var(--background-color);
+    overflow-x: hidden;
 }
 
 .flex-column {
@@ -63,6 +64,10 @@ button:focus {
 }
 .mat-row {
     border-bottom: 7px solid var(--table-border);
+    cursor: pointer;
+    &.active{
+        background-color: var(--background-color-secondary);
+    }
 }
 
 /*

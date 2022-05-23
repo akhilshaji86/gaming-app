@@ -9,6 +9,7 @@ import { CarouselComponent } from './carousel/carousel.component';
 import { HeaderComponent } from './header/header.component';
 import { MaterialModule } from './material.module';
 import { GameListComponent } from './game-list/game-list.component';
+import { GameTabListComponent } from './game-tab-list/game-tab-list.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { GameListComponent } from './game-list/game-list.component';
     AppComponent,
     HeaderComponent,
     CarouselComponent,
-    GameListComponent
+    GameListComponent,
+    GameTabListComponent
   ],
   imports: [
     BrowserModule,
