@@ -20,6 +20,8 @@ export class AppComponent {
       '--orange-background-color': '#df6a2e',
       '--background-color-dark': '#adadad',
       '--background-color-light': '#dadada',
+      '--table-color': '#d7d7d7',
+      '--table-border': '#bdbdbd'
     },
     'dark-theme': {
       '--text-color': '#ffffff',
@@ -29,7 +31,8 @@ export class AppComponent {
       '--orange-background-color': '#df6a2e',
       '--background-color-dark': 'black',
       '--background-color-light': '#262626',
-
+      '--table-color': '#292929',
+      '--table-border': '#2b2b2b'
     }
   }
 

@@ -8,13 +8,15 @@ import { AppComponent } from './app.component';
 import { CarouselComponent } from './carousel/carousel.component';
 import { HeaderComponent } from './header/header.component';
 import { MaterialModule } from './material.module';
+import { GameListComponent } from './game-list/game-list.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    CarouselComponent
+    CarouselComponent,
+    GameListComponent
   ],
   imports: [
     BrowserModule,

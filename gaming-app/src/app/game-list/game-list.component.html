@@ -1,0 +1,34 @@
+<div class="game-list-container d-flex p-10">
+    <div class="game-list item" id="scrollbar">
+        <table mat-table [dataSource]="gamesList">
+            <!-- slot games Column -->
+            <ng-container matColumnDef="slotGames">
+                <th mat-header-cell *matHeaderCellDef> Slot Games </th>
+                <td mat-cell *matCellDef="let game"> {{game.gameName}} </td>
+            </ng-container>
+
+            <!-- Jackpot Column -->
+            <ng-container matColumnDef="jackpot">
+                <th mat-header-cell *matHeaderCellDef> Jackpot </th>
+                <td mat-cell *matCellDef="let game"> {{game.jackpot}} </td>
+            </ng-container>
+
+            <!-- Time Column -->
+            <ng-container matColumnDef="time">
+                <th mat-header-cell *matHeaderCellDef> Time </th>
+                <td mat-cell *matCellDef="let game"> {{game.time}} </td>
+            </ng-container>
+            <tr mat-header-row *matHeaderRowDef="displayedColumns;sticky: true"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+    </div>
+    <div class="live-frame item">
+        <iframe height="100%" width="100%" src="https://www.youtube.com/embed/BhbHzNOx0JM" title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+    </div>
+    <div class="ad-carousal item">
+        <app-carousel></app-carousel>
+    </div>
+</div>

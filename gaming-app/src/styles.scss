@@ -13,7 +13,7 @@
 body {
     // @include themeColorSelector("dark");
     color: var(--text-color);
-    background-color:  var(--background-color);
+    background-color: var(--background-color);
 }
 
 .flex-column {
@@ -43,12 +43,12 @@ body {
 }
 .header-btn {
     background-color: var(--background-color);
-    color:  var(--text-color);
+    color: var(--text-color);
     border: none;
     padding: 10px;
     cursor: pointer;
     &:hover {
-        background-color:  var(--background-color-secondary);
+        background-color: var(--background-color-secondary);
     }
 }
 .bg-orange {
@@ -56,5 +56,38 @@ body {
 }
 button:focus {
     outline: none;
+}
+.mat-cell,
+.mat-header-cell {
+    color: var(--text-color);
+}
+.mat-row {
+    border-bottom: 7px solid var(--table-border);
+}
+
+/*
+ *  STYLE 1
+ */
+
+#scrollbar::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    background-color: var(--table-border);
+}
+
+#scrollbar::-webkit-scrollbar {
+    width: 7px;
+    background-color: var(--table-border);
+}
+
+#scrollbar::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: var(--background-color-secondary);
+}
+.carousel-indicators li {
+    &.active{
+        background-color: var(--orange-background-color);
+    }
 }
 /* Add application styles & imports to this file! */
