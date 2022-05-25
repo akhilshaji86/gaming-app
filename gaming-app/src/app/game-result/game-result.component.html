@@ -1,0 +1,33 @@
+<div class="result-container position-relative" #gameResult>
+    <div class="result-item-container" [class.studio]="index>3" *ngFor="let item of itemList ;let index=index">
+        <div class="result-item item-des position-relative">
+            <h3 class="position-absolute" *ngIf="selectedGameList && index===0">{{selectedGameList.title}}
+                {{selectedIndex+1}}</h3>
+            <mat-icon class="position-absolute expand">expand_more</mat-icon>
+            <div class="label-container d-flex flex-column">
+                <div class="background-image icons" [ngStyle]="{'background-image': 'url('+item.iconUrl+')'}"></div>
+                <div class="title">{{item.title}} {{index+1}} </div>
+                <div class="sub-title">{{item.subTitle}} </div>
+                <button class="view-btn position-absolute" mat-button>View All</button>
+            </div>
+        </div>
+        <div class="result-item " [class.last-item]="index>3 && unitItem===3"
+            *ngFor="let unit of [0,1,2,3]; let unitItem=index;">
+            <div class="jackpot background-image"
+                [ngStyle]="{'background-image': 'url(../../assets/images/mighty-cash.jpg)'}"></div>
+            <div class="jackpot-label-text-title position-relative text-uppercase pt-10">Mighty Cash
+                <mat-icon class="position-absolute info-icon">info</mat-icon>
+            </div>
+            <div class="jackpot-label-text-subtitle sub-title">{{item.subTitle}}</div>
+        </div>
+    </div>
+    <div class="circle d-flex flex-column position-absolute" (click)="scrollTop()">
+        <mat-icon>
+            expand_less
+        </mat-icon>
+        <div class="top">
+            TOP
+        </div>
+
+    </div>
+</div>

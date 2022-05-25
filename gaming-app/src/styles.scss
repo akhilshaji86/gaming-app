@@ -34,7 +34,7 @@ body {
     padding: 10px;
 }
 .pr-25 {
-    padding-right: 25px;
+    padding-right: 25px !important;
 }
 .pt-10 {
     padding-top: 10px;
@@ -65,14 +65,10 @@ button:focus {
 .mat-row {
     border-bottom: 7px solid var(--table-border);
     cursor: pointer;
-    &.active{
+    &.active {
         background-color: var(--background-color-secondary);
     }
 }
-
-/*
- *  STYLE 1
- */
 
 #scrollbar::-webkit-scrollbar-track {
     -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
@@ -91,8 +87,71 @@ button:focus {
     background-color: var(--background-color-secondary);
 }
 .carousel-indicators li {
-    &.active{
+    &.active {
         background-color: var(--orange-background-color);
     }
 }
+.background-image {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.cursor-pointer {
+    cursor: pointer;
+}
+mat-label {
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.mat-form-field-infix {
+    color: var(--text-color);
+    background-color: var(--table-color);
+    border-radius: 5px;
+}
+.mat-form-field-appearance-fill .mat-form-field-flex {
+    background-color: unset;
+}
+.mat-form-field-label-wrapper {
+    top: -0.6em;
+}
+
+.mat-menu-content:not(:empty) {
+    background-color: var(--orange-background-color);
+}
+.mat-menu-panel {
+    border-radius: 0px !important;
+}
+.mat-menu-content {
+    .circle {
+        &.flag {
+            top: 13px;
+        }
+    }
+}
+
+.mat-option {
+    &:hover:not(.mat-option-disabled),
+    &:focus:not(.mat-option-disabled) {
+        background-color: var(--orange-background-color-dim);
+        opacity: .8;
+        color: var(--text-color);
+    }
+    &.mat-selected:not(.mat-option-multiple):not(.mat-option-disabled),
+    &.mat-active {
+        background-color: var(--background-color-secondary);
+        color: var(--text-color);
+    }
+}
+.mat-menu-item,
+.mat-option {
+    background-color: var(--orange-background-color);
+    color: var(--text-color);
+    &:hover {
+        background-color: var(--background-color-secondary);
+        color: var(--text-color);
+    }
+}
+
 /* Add application styles & imports to this file! */

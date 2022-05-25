@@ -15,24 +15,34 @@ export class AppComponent {
     'white-theme': {
       '--text-color': '#000000',
       '--background-color': '#c3c3c3',
-      '--background-color-primary': '#aaaaaa',
-      '--background-color-secondary': '#6f6767',
+      '--background-color-primary': '#555555',
+      '--background-color-secondary': '#828282',
       '--orange-background-color': '#df6a2e',
+      '--orange-background-color-dim': '#df6a2ec2',
       '--background-color-dark': '#adadad',
       '--background-color-light': '#dadada',
       '--table-color': '#d7d7d7',
-      '--table-border': '#bdbdbd'
+      '--table-border': '#bdbdbd',
+      '--tab-color': '#949494',
+      '--dark-background-color': '#e6e6e6',
+      '--expand-background-color': '#bebebe',
+      '--dull-background-color': '#aeaeae',
     },
     'dark-theme': {
       '--text-color': '#ffffff',
       '--background-color': '#2a2a2a',
       '--background-color-primary': '#aaaaaa',
-      '--background-color-secondary': '#6f6767',
+      '--background-color-secondary': '#505050',
       '--orange-background-color': '#df6a2e',
+      '--orange-background-color-dim': '#df6a2ec2',
       '--background-color-dark': 'black',
       '--background-color-light': '#262626',
       '--table-color': '#292929',
-      '--table-border': '#2b2b2b'
+      '--table-border': '#2b2b2b',
+      '--tab-color': '#303030',
+      '--dark-background-color': '#191919',
+      '--expand-background-color': '#414141',
+      '--dull-background-color': '#515151'
     }
   }
 

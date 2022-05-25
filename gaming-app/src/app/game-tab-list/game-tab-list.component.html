@@ -1,1 +1,53 @@
-<p>game-tab-list works!</p>
+<div class="tab-list-container d-flex ">
+    .
+    <div class="carousel-control-prev-icon cursor-pointer h-100 d-flex align-items-center" (click)="scrollLeft()">
+    </div>
+    <div class="option-container d-flex" #scrollContainer>
+        <div class="label-container d-flex flex-column" *ngFor="let item of gameContentList; let index=index"
+            (click)="selectedItem=item;selectedIndex=index" [class.active]="selectedItem.id ===item.id ">
+            <div class="background-image icons" [ngStyle]="{'background-image': 'url('+item.iconUrl+')'}"></div>
+            <div class="title">{{item.title}} {{index+1}} </div>
+        </div>
+    </div>
+    <div class="carousel-control-next-icon cursor-pointer h-100 d-flex align-items-center " (click)="scrollRight()">
+    </div>
+</div>
+<div class="search-bar-container justify-content-between d-flex">
+    <div class="search-box d-flex align-items-center">
+        <input type="text" mat-input placeholder="Search games">
+        <mat-icon class="search-icon">search</mat-icon>
+    </div>
+    <div class="filter-container d-flex">
+        <div class="filter-list">
+            <mat-form-field appearance="fill">
+                <mat-label>Providers </mat-label>
+                <mat-select>
+                    <mat-option *ngFor="let item of providers" [value]="item.viewValue">
+                        {{item.value}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div class="filter-list">
+            <mat-form-field appearance="fill">
+                <mat-label>Game Theme </mat-label>
+                <mat-select>
+                    <mat-option *ngFor="let item of gameTheme" [value]="item.viewValue">
+                        {{item.value}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div class="filter-list">
+            <mat-form-field appearance="fill">
+                <mat-label>Sort by </mat-label>
+                <mat-select>
+                    <mat-option *ngFor="let item of sortby" [value]="item.viewValue">
+                        {{item.value}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+    </div>
+</div>
+<app-game-result [selectedGameList]="selectedItem" [selectedIndex]="selectedIndex"></app-game-result>

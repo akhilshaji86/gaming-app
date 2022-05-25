@@ -120,6 +120,7 @@ nav {
         margin-right: 5px;
         padding-top: 3px;
         padding-bottom: 3px;
+        line-height: 25px;
     }
 }
 .server-time {
@@ -130,29 +131,7 @@ nav {
     color: var(--background-color-secondary);
 }
 
-::ng-deep {
-    .mat-menu-content:not(:empty) {
-        background-color: var(--orange-background-color);
-    }
-    .mat-menu-panel {
-        border-radius: 0px !important;
-    }
-    .mat-menu-content {
-        .circle {
-            &.flag {
-                top: 13px;
-            }
-        }
-    }
-}
-.mat-menu-item {
-    background-color: var(--orange-background-color);
-    color: var(--text-color);
-    &:hover {
-        background-color: var(--background-color-secondary);
-        color: var(--text-color);
-    }
-}
+
 .plus {
     font-size: 45px;
     font-weight: bold;

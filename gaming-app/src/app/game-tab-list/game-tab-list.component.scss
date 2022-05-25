@@ -1,0 +1,115 @@
+.icons {
+    width: 30px;
+    height: 30px;
+    border: none;
+    border-radius: 50%;
+}
+.label-container {
+    background-color: var(--tab-color);
+    padding: 30px;
+    margin: 10px 10px;
+    width: 160px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    scroll-behavior: smooth;
+    border-radius: 10px;
+    &.active {
+        transform: scale(1.05);
+        transition: transform 0.5s;
+        background-color: var(--orange-background-color);
+    }
+}
+.tab-list-container {
+    background-color: var(--dark-background-color);
+    @extend .max-container-height;
+}
+.max-container-height {
+    height: 135px;
+}
+.option-container {
+    max-width: calc(100% - 40px);
+    overflow-y: hidden;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+.title {
+    width: 160px;
+    text-align: center;
+}
+.search-bar-container {
+    background-color: var(--dark-background-color);
+    padding: 20px;
+}
+.search-box {
+    margin-bottom: 10px;
+    input {
+        @extend .input-class;
+    }
+    .search-icon {
+        transform: scaleX(-1);
+        margin: 0px 10px;
+        color: var(--background-color-primary);
+        cursor: pointer;
+    }
+}
+@mixin placeholder {
+    ::-webkit-input-placeholder {
+        @content;
+    }
+    :-moz-placeholder {
+        @content;
+    }
+    ::-moz-placeholder {
+        @content;
+    }
+    :-ms-input-placeholder {
+        @content;
+    }
+}
+
+@include placeholder {
+    font-style: italic;
+    font-weight: 100;
+}
+
+:host ::ng-deep {
+    .mat-form-field-flex {
+        &:hover {
+            border: none;
+        }
+    }
+    .mat-select-arrow {
+        color: var(--text-color);
+        margin-right: 30px;
+        margin-top: 10px;
+    }
+    .mat-form-field.mat-focused.mat-primary .mat-select-arrow {
+        color: var(--orange-background-color);
+    }
+    .mat-form-field-underline {
+        display: none;
+    }
+    .mat-select-value {
+        color: var(--text-color);
+        @extend .input-class;
+    }
+    .mat-form-field-label:not(.mat-form-field-empty) {
+        font-size: 12px !important;
+    }
+}
+.input-class {
+    background-color: var(--table-color);
+    color: var(--text-color);
+    border-radius: 5px;
+    border: none;
+    padding: 5px 20px;
+    // @extend
+    &:focus-visible {
+        outline: none;
+    }
+}
+
+.filter-list {
+    font-size: 14px;
+}

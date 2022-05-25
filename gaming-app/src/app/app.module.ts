@@ -10,6 +10,8 @@ import { HeaderComponent } from './header/header.component';
 import { MaterialModule } from './material.module';
 import { GameListComponent } from './game-list/game-list.component';
 import { GameTabListComponent } from './game-tab-list/game-tab-list.component';
+import { GameResultComponent } from './game-result/game-result.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
@@ -18,7 +20,9 @@ import { GameTabListComponent } from './game-tab-list/game-tab-list.component';
     HeaderComponent,
     CarouselComponent,
     GameListComponent,
-    GameTabListComponent
+    GameTabListComponent,
+    GameResultComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
