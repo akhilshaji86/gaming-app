@@ -1,6 +1,5 @@
 @import "~@angular/material/theming";
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
-// @import "./colors.scss";
 :root {
     --text-color: white;
     --background-color: #2a2a2a;
@@ -11,7 +10,6 @@
 }
 /* You can add global styles to this file, and also import other style files */
 body {
-    // @include themeColorSelector("dark");
     color: var(--text-color);
     background-color: var(--background-color);
     overflow-x: hidden;

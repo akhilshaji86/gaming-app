@@ -12,6 +12,8 @@ import { GameListComponent } from './game-list/game-list.component';
 import { GameTabListComponent } from './game-tab-list/game-tab-list.component';
 import { GameResultComponent } from './game-result/game-result.component';
 import { FooterComponent } from './footer/footer.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 
 
 @NgModule({
@@ -22,7 +24,9 @@ import { FooterComponent } from './footer/footer.component';
     GameListComponent,
     GameTabListComponent,
     GameResultComponent,
-    FooterComponent
+    FooterComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

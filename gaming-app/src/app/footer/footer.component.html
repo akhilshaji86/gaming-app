@@ -1,3 +1,83 @@
 <div class="footer-container">
+    <div class="payment-container ">
+        <div class="app-container item">
+            <div class="text-uppercase title">Play anywhere in nj with our mobile app</div>
+            <div class="image-container d-flex ">
+                <div class="background-image google-play"
+                    [ngStyle]="{'background-image': 'url(../../assets/images/footer/google-play.png)'}"></div>
+                <div class="background-image app-store"
+                    [ngStyle]="{'background-image': 'url(../../assets/images/footer/app-store.png)'}"></div>
+            </div>
+        </div>
+        <div class="payment-gateway-container item">
+            <!-- <div class="border"></div> -->
+            <div class="text-uppercase title">Fast and secure banking Methods</div>
+            <div class="image-container d-flex align-items-center">
+                <div class="background-image "
+                    [ngStyle]="{'background-image': 'url(../../assets/images/footer/mastercard.png)'}"></div>
+                <div class="background-image"
+                    [ngStyle]="{'background-image': 'url(../../assets/images/footer/visa.png)'}"></div>
+                <div class="background-image pay-pal"
+                    [ngStyle]="{'background-image': 'url(../../assets/images/footer/paypal.png)'}"></div>
+            </div>
+        </div>
+        <div class="regulation-conatiner item">
+            <div class="text-uppercase title">Trusted, Regulated and secure</div>
+            <div class="image-container d-flex ">
+                <div class="background-image" *ngFor="let item of [0,1,2,3,4,5,6,7]"
+                    [ngStyle]="{'background-image': 'url(../../assets/images/footer/pagcor.png)'}"></div>
+            </div>
+        </div>
 
-</div>
+
+    </div>
+    <div class="footer-container-bottom d-flex">
+        <div class="footer-container-bottom-left d-flex w-50">
+            <div >
+                <div class ="title invisible">____</div>
+                <ul>
+                    <li>
+                        <a href=""><span>Home</span> </a>
+                    </li>
+                    <li>
+                        <a href=""> <span>Profile</span> </a>
+                    </li>
+                    <li>
+                        <a href=""> <span>Wallet</span> </a>
+                    </li>
+                    <li>
+                        <a href=""> <span>Setting</span> </a>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <div class ="title">About Us</div>
+                <ul>
+                    <li>
+                        <a href=""> <span>Privacy Policy</span> </a>
+                    </li>
+                    <li>
+                        <a href=""> <span>AML Policy</span> </a>
+                    </li>
+                    <li>
+                        <a href=""> <span>Terms of Service</span> </a>
+                    </li>
+                    <li>
+                        <a href=""> <span>Self Exclusion</span> </a>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <div class ="title p-0">Follow us on</div>
+                <div class="image-container d-flex">
+                    <div class="background-image"
+                        [ngStyle]="{'background-image': 'url(../../assets/images/social-media/twitter.png)'}"></div>
+                    <div class="background-image"
+                        [ngStyle]="{'background-image': 'url(../../assets/images/social-media/facebook.png)'}"></div>
+                    <div class="background-image"
+                        [ngStyle]="{'background-image': 'url(../../assets/images/social-media/youtube.png)'}"></div>
+
+                </div>
+            </div>
+            <!-- <div class="footer-container-bottom-right"></div> -->
+        </div>

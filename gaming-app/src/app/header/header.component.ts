@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { AppService } from '../app.service';
+import { LoginComponent } from '../login/login.component';
+import { RegisterComponent } from '../register/register.component';
 
 @Component({
   selector: 'app-header',
@@ -15,7 +18,16 @@ export class HeaderComponent implements OnInit {
   countryImg = 'assets/images/flags/us.png';
   theme: 'dark-theme' | 'white-theme' = 'dark-theme';
   dateTime = new Date().toISOString();
-  constructor(private appService: AppService) { }
+  isLoggedIn: boolean = false;
+
+  constructor(private appService: AppService, public matDialog: MatDialog) {
+    this.isLoggedInFn()
+  }
+  isLoggedInFn() {
+    this.appService.isLoggedIn().subscribe(isLoggedIn => {
+      this.isLoggedIn = isLoggedIn;
+    });
+  }
   ngOnInit(): void {
 
   }
@@ -23,5 +35,21 @@ export class HeaderComponent implements OnInit {
     this.theme = theme == 'dark-theme' ? 'white-theme' : 'dark-theme';
     this.appService.setTheme(this.theme);
   }
+  login() {
+    this.matDialog.open(LoginComponent, {
+      width: '500px',
+      height: '500px',
+      data: {
+      }
+    })
+  }
+  register() {
+    this.matDialog.open(RegisterComponent, {
+      width: '500px',
+      height: '500px',
+      data: {
 
+      }
+    });
+  }
 }

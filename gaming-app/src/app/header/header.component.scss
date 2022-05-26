@@ -9,9 +9,12 @@ nav {
     justify-content: space-between;
     width: 15%;
     margin-left: 15%;
+    .mat-button {
+        min-width: unset;
+    }
     a {
         place-self: center;
-        padding: 10px;
+        margin: 10px;
         &:hover {
             background-color: var(--background-color-secondary);
         }
@@ -34,6 +37,10 @@ nav {
     align-content: center;
     align-items: center;
     height: 100%;
+    &.not-logged {
+        margin-left: 20%;
+        background-color: inherit;
+    }
     &::after {
         content: "";
         position: absolute;
@@ -128,9 +135,8 @@ nav {
     left: 20px;
     width: max-content;
     font-size: 10px;
-    color: var(--background-color-secondary);
+    color: var(--background-color-primary);
 }
-
 
 .plus {
     font-size: 45px;
@@ -139,6 +145,7 @@ nav {
     left: -6px;
     bottom: 0px;
     z-index: 1;
+    cursor: pointer;
 }
 .outsid-arrow {
     background-color: #df6a2e;
@@ -146,4 +153,18 @@ nav {
     display: flex;
     color: black;
     align-items: center;
+}
+.button-container {
+    button {
+        border: 1px solid var(--orange-background-color);
+        color: var(--text-color);
+        background-color: var(--orange-background-color);
+        border-radius: 0px;
+        height: 30px;
+        width: 150px;
+        &:hover {
+            color: var(--orange-background-color);
+            background-color: var(--background-color-secondary);
+        }
+    }
 }

@@ -42,7 +42,7 @@
     padding: 20px;
 }
 .search-box {
-    margin-bottom: 10px;
+    margin: 0px 10px;
     input {
         @extend .input-class;
     }
@@ -104,7 +104,6 @@
     border-radius: 5px;
     border: none;
     padding: 5px 20px;
-    // @extend
     &:focus-visible {
         outline: none;
     }
