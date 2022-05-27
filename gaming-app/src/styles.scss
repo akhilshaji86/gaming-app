@@ -37,6 +37,9 @@ body {
 .pt-10 {
     padding-top: 10px;
 }
+.w-90 {
+    width: 90%;
+}
 .color-gold {
     color: gold;
 }
@@ -133,7 +136,7 @@ mat-label {
     &:hover:not(.mat-option-disabled),
     &:focus:not(.mat-option-disabled) {
         background-color: var(--orange-background-color-dim);
-        opacity: .8;
+        opacity: 0.8;
         color: var(--text-color);
     }
     &.mat-selected:not(.mat-option-multiple):not(.mat-option-disabled),
@@ -151,5 +154,33 @@ mat-label {
         color: var(--text-color);
     }
 }
+.input-class {
+    background-color: var(--table-color);
+    color: var(--text-color);
+    border-radius: 5px;
+    padding: 5px 20px;
+    border: 1px solid var(--background-color-secondary);
+    &:focus {
+        background-color: var(--table-color);
+        border-color: var(--orange-background-color);
+        outline: none;
+        box-shadow: 0 0 0 0.2rem rgb(223 106 46 / 25%);
+        color: var(--text-color);
+    }
+    &:not(:focus) {
+        color: var(--background-color-primary);
+    }
+}
+.color-secondary {
+    color: var(--background-color-secondary) !important;
+}
+.color-primary {
+    color: var(--background-color-primary) !important;
+}
+input[type="checkbox"],
+input[type="radio"] {
+    accent-color: var(--orange-background-color);
+}
+
 
 /* Add application styles & imports to this file! */

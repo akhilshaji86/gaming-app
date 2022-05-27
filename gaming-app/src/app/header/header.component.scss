@@ -162,9 +162,17 @@ nav {
         border-radius: 0px;
         height: 30px;
         width: 150px;
-        &:hover {
+        &.register {
+            background-color: var(--background-color);
             color: var(--orange-background-color);
-            background-color: var(--background-color-secondary);
+            &:hover {
+                background-color: var(--orange-background-color);
+                color: var(--text-color);
+            }
         }
     }
+}
+::ng-deep .mat-dialog-container {
+    padding: 0px !important;
+    overflow-x: hidden;
 }

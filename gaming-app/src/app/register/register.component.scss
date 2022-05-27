@@ -1,0 +1,22 @@
+@import "../login/login.component.scss";
+.login-popup-container {
+    height: 100%;
+    a {
+        color: var(--orange-background-color);
+        text-decoration: none;
+        cursor: pointer;
+        &:hover {
+            text-decoration: underline;
+            text-decoration-color: var(--orange-background-color);
+        }
+    }
+    .declaration {
+        font-size: 12px;
+        line-height: 1;
+        bottom: 10px;
+        left: calc(50% - 110px);
+    }
+    .create-account-container {
+        bottom: 20px;
+    }
+}

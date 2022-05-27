@@ -37,16 +37,20 @@ export class HeaderComponent implements OnInit {
   }
   login() {
     this.matDialog.open(LoginComponent, {
-      width: '500px',
-      height: '500px',
+      width: '744px',
+      height: '579px',
+      // disableClose: true,
+      autoFocus: false,
       data: {
       }
     })
   }
   register() {
     this.matDialog.open(RegisterComponent, {
-      width: '500px',
-      height: '500px',
+      width: '998px',
+      height: '580px',
+      // disableClose: true,
+      autoFocus: false,
       data: {
 
       }

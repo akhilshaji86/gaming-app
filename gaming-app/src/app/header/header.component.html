@@ -20,8 +20,8 @@
 
 
     </nav>
-    <div class="account-container d-flex justify-content-lg-around" [class.not-logged]="!isLoggedIn"
-        [class.white-theme]="theme==='white-theme'">
+    <div class="account-container d-flex " [class.justify-content-lg-around]="isLoggedIn"
+        [class.not-logged]="!isLoggedIn" [class.white-theme]="theme==='white-theme'">
         <ng-container *ngIf="isLoggedIn">
             <div class="d-flex flex-column p-lr-10 text-right">
                 <span> Account Number : {{accountNumber}} </span>
@@ -37,10 +37,10 @@
         <ng-container *ngIf="!isLoggedIn">
             <div class="button-container d-flex">
                 <button mat-button
-                    class="d-flex align-items-center justify-content-center mat-button mr-5 text-uppercase"
+                    class="d-flex align-items-center font-weight-bold justify-content-center mat-button mr-3 text-uppercase"
                     (click)="login()">Login</button>
                 <button mat-button
-                    class="d-flex align-items-center justify-content-center mat-button mr-5 text-uppercase"
+                    class="d-flex align-items-center register font-weight-bold justify-content-center mat-button mr-5 text-uppercase"
                     (click)="register()">Register</button>
             </div>
         </ng-container>
