@@ -3,7 +3,7 @@ export const Themes = {
         '--text-color': '#000000',
         '--background-color': '#c3c3c3',
         '--background-color-primary': '#555555',
-        '--background-color-secondary': '#afafaf',
+        '--background-color-secondary': '#8a9198',
         '--orange-background-color': '#df6a2e',
         '--orange-background-color-dim': '#df6a2ec2',
         '--background-color-dark': '#adadad',
