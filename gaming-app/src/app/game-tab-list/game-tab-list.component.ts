@@ -7,6 +7,7 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 })
 export class GameTabListComponent implements OnInit {
   @ViewChild('scrollContainer', { static: true }) scrollContainer: ElementRef;
+  searchText: string;
   selectedItem: { id: string, title: string, iconUrl: string } = { id: '', title: '', iconUrl: '' };
   providers: { value: string, viewValue: string }[] = [{ value: 'item 1', viewValue: 'item_1' }, { value: 'item 2', viewValue: 'item_2' }, { value: 'item 3', viewValue: 'item_3' }]
   gameTheme: { value: string, viewValue: string }[] = [{ value: 'item 1', viewValue: 'item_1' }, { value: 'item 2', viewValue: 'item_2' }, { value: 'item 3', viewValue: 'item_3' }]
@@ -28,6 +29,7 @@ export class GameTabListComponent implements OnInit {
     { id: Math.random() * 100 + 1 + '', title: 'Title', iconUrl: '../../../assets/images/game-tab-list/game-6.png' }
   ];
   selectedIndex: number = 0;
+  searchTextForSearch: string;
   constructor() { }
 
   ngOnInit(): void {
@@ -39,5 +41,9 @@ export class GameTabListComponent implements OnInit {
   }
   scrollRight() {
     this.scrollContainer.nativeElement.scrollLeft += 150;
+  }
+
+  setSearchTerm(searchTerm: string) {
+    this.searchTextForSearch = searchTerm;
   }
 }

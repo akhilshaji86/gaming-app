@@ -14,8 +14,8 @@
 </div>
 <div class="search-bar-container justify-content-between d-flex">
     <div class="search-box d-flex align-items-center">
-        <input type="text" mat-input placeholder="Search games">
-        <mat-icon class="search-icon">search</mat-icon>
+        <input type="text" [(ngModel)]="searchText" mat-input placeholder="Search games">
+        <mat-icon class="search-icon" (click)="setSearchTerm(searchText)">search</mat-icon>
     </div>
     <div class="filter-container d-flex">
         <div class="filter-list">
@@ -50,4 +50,4 @@
         </div>
     </div>
 </div>
-<app-game-result [selectedGameList]="selectedItem" [selectedIndex]="selectedIndex"></app-game-result>
+<app-game-result [searchText]="searchText" [selectedGameList]="selectedItem" [selectedIndex]="selectedIndex"></app-game-result>
