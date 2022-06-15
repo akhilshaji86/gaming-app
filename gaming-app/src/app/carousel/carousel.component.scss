@@ -1,6 +1,6 @@
 .carousel-container {
     padding: 10px;
-    max-width: 50vw;
+    // max-width: 50vw;
 }
 
 .carousel-caption {
@@ -15,6 +15,23 @@
     background: #00000073;
     width: 100%;
     h3 {
+        font-size: 1.5rem;
         color: #df6a2e;
     }
+}
+
+@media screen and (max-width: 920px) {
+    .carousel-container {
+        .carousel-caption {
+p
+            h3,
+            p {
+                margin: 0;
+            }
+
+            padding: 0px;
+            padding-left: 10px;
+        }
+    }
+
 }

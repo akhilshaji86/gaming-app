@@ -4,7 +4,9 @@
     color: var(--background-color-primary);
     font-size: 12px;
     letter-spacing: 1px;
+    height: fit-content;
 }
+
 .payment-container {
     display: grid;
     grid-template-columns: 2.8fr 2.8fr 4fr;
@@ -19,20 +21,24 @@
     background-size: contain;
     height: 40px;
     width: 50px;
+
     &.google-play,
     &.app-store {
         width: 125px;
         height: 37px;
     }
 }
+
 .item {
     padding: 35px;
 }
+
 .payment-gateway-container {
     border-right: 1px solid var(--background-color-secondary);
     border-left: 1px solid var(--background-color-secondary);
     margin: 20px 0px;
     padding: 20px;
+
     .image-container {
         .pay-pal {
             margin: 0px;
@@ -41,6 +47,7 @@
         }
     }
 }
+
 .regulation-conatiner {
     .image-container {
         .background-image {
@@ -48,36 +55,161 @@
         }
     }
 }
+
 .footer-container-bottom {
     .footer-container-bottom-left {
+        width: 45%;
         gap: 50px;
-        border-right: 1px solid var(--background-color-primary);
     }
+
+    .footer-container-bottom-right {
+        border-left: 1px solid var(--background-color-primary);
+        padding: 0px 10px;
+        width: 50%;
+
+        .content {
+            color: var(--text-color);
+        }
+    }
+
     font-size: 13px;
+    gap: 50px;
+
     .background-image {
         height: 20px;
         width: 30px;
         margin: 0px;
     }
+
     padding: 40px;
+
     .title {
         color: var(--text-color);
         font-size: 14px;
         font-weight: 500;
         padding-bottom: 15px;
     }
+
     ul {
         list-style: none;
         padding: 0px;
         padding-right: 10px;
+
         li {
             list-style: none;
             margin: 0px;
             padding: 2px 0px;
+
             a {
                 color: var(--text-color);
                 text-decoration: none;
                 font-size: 12px;
+            }
+        }
+    }
+}
+
+.border-bottom,
+.border-top {
+    display: none;
+}
+
+@media screen and (max-width: 930px) {
+    .payment-container {
+        grid-template-columns: 1fr;
+
+        .payment-gateway-container {
+            border: none;
+            padding: 20px;
+        }
+
+        .regulation-conatiner {
+            &.item {
+                .image-container {
+                    display: grid !important;
+                    grid-template-columns: repeat(4, 1fr);
+                }
+            }
+        }
+
+        .item {
+            padding: 0;
+            padding-top: 10px;
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+
+    .top-border {
+        position: absolute;
+        width: calc(100% - 60px);
+        height: 1px;
+        background-color: var(--background-color-secondary);
+        left: 30px;
+        top: 0px;
+    }
+
+    .bottom-border {
+        position: absolute;
+        width: calc(100% - 60px);
+        height: 1px;
+        background-color: var(--background-color-secondary);
+        left: 30px;
+        bottom: 0px;
+    }
+
+    .footer-container-bottom {
+        flex-direction: column;
+
+        .background-image {
+            height: 35px;
+            width: 100px;
+        }
+
+        .footer-container-bottom-left,
+        .footer-container-bottom-right {
+            width: 100%;
+            justify-content: center;
+            border: none;
+        }
+
+        .footer-container-bottom-left {
+            display: grid !important;
+            grid-template-columns: repeat(3, 1fr);
+
+            .follow {
+                display: flex;
+                grid-column: span 3;
+                align-items: center;
+                position: relative;
+
+                .border-bottom,
+                .border-top {
+                    display: block;
+                    position: absolute;
+                    width: 100%;
+                    height: 1px;
+                    background-color: var(--background-color-secondary);
+                    bottom: -30px;
+                    left: 0px;
+                }
+
+                .border-top {
+                    top: -30px;
+                }
+            }
+        }
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+
+    .follow {
+        .image-container {
+            .background-image {
+                width: 75px;
             }
         }
     }

@@ -1,23 +1,45 @@
-.header-conatiner {
-    display: flex;
-    align-items: center;
-    height: 80px;
-    background-color: var(--background-color-light);
+.header-height {
+    height: 60px;
+
 }
+
+@media screen and (max-width: 930px) {
+    .header-height {
+        height: 60px;
+    }
+}
+
+.header-conatiner {
+    display: grid;
+    grid-template-columns: 1fr 1fr 2fr 20px;
+    grid-template-rows: auto;
+    align-items: center;
+    @extend .header-height;
+    background-color: var(--background-color-light);
+
+    .menu-icon {
+        display: none;
+    }
+}
+
 nav {
     display: flex;
     justify-content: space-between;
     width: 15%;
-    margin-left: 15%;
+
+    // margin-left: 5%;
     .mat-button {
         min-width: unset;
     }
+
     a {
         place-self: center;
         margin: 10px;
+
         &:hover {
             background-color: var(--background-color-secondary);
         }
+
         &:hover,
         &.active {
             color: #df6a2e;
@@ -26,21 +48,43 @@ nav {
         }
     }
 }
+
 ::ng-deep .account-container {
+    width: 100%;
     $var: var(--background-color);
     position: relative;
-    width: 60%;
-    margin-left: 10%;
     background-color: var(--background-color-dark);
     padding-left: 30px;
-    display: flex;
     align-content: center;
     align-items: center;
     height: 100%;
-    &.not-logged {
-        margin-left: 20%;
-        background-color: inherit;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: flex-end;
+    justify-items: end;
+    column-gap: 10px;
+
+    .account-nmbr {
+        width: 250px;
+        height: 100%;
+        // padding: 0px 10px;
     }
+
+    .avatar {
+        display: none;
+        width: 40px;
+        @extend .header-height;
+    }
+
+    .balance {
+        display: none;
+    }
+
+    &.not-logged {
+        background-color: inherit;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
     &::after {
         content: "";
         position: absolute;
@@ -53,44 +97,56 @@ nav {
         border-color: transparent transparent #262626 transparent;
         transform: rotate(180deg);
     }
+
+
     &.white-theme {
         .circle {
             background-color: #fff;
         }
+
         &::after {
             border-color: transparent transparent #dadada transparent;
         }
     }
 }
+
 .bg-orange {
     position: relative;
+
     &:hover {
         background-color: #df6a2e;
     }
 }
+
 .has-before {
+    width: 74px;
     background-color: var(--background-color-secondary);
+
     &:hover {
         background-color: var(--background-color);
+
         &::before {
             border-color: transparent transparent var(--background-color) transparent;
         }
     }
+
     &::before {
         content: "";
         position: absolute;
         bottom: 10px;
-        left: 160px;
+        right: 84px;
         width: 0;
         height: 0;
         border-style: solid;
         border-width: 0px 0 44px 7px;
         border-color: transparent transparent var(--background-color-secondary) transparent;
+
         &:hover {
             background-color: var(--background-color-secondary);
         }
     }
 }
+
 .slanted-black-line {
     position: absolute;
     bottom: 10px;
@@ -102,6 +158,7 @@ nav {
     -moz-transform: skew(-10deg);
     -webkit-transform: skew(-10deg);
 }
+
 .circle {
     width: 20px;
     height: 20px;
@@ -110,14 +167,21 @@ nav {
     position: absolute;
     top: 4px;
     right: 4px;
+
     &.flag {
-        left: 5px;
+        padding: 0.2rem;
+        left: 0.8rem;
         background: none;
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
         background-image: url(/assets/images/flag.png);
+
     }
+}
+
+.span-text {
+    margin-left: 0.8rem;
 }
 
 .btn-container {
@@ -130,6 +194,7 @@ nav {
         line-height: 25px;
     }
 }
+
 .server-time {
     top: -20px;
     left: 20px;
@@ -147,6 +212,7 @@ nav {
     z-index: 1;
     cursor: pointer;
 }
+
 .outsid-arrow {
     background-color: #df6a2e;
     height: 100%;
@@ -154,17 +220,38 @@ nav {
     color: black;
     align-items: center;
 }
+
+.outsid-arrow-up {
+    background-color: #df6a2e;
+    height: 80%;
+    display: flex;
+    color: black;
+    align-items: right;
+    width: 1%;
+    float: right;
+    z-index: 2;
+    margin-bottom: 1rem;
+    margin-left: 1rem;
+}
+
 .button-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    grid-auto-rows: auto;
+
     button {
         border: 1px solid var(--orange-background-color);
         color: var(--text-color);
         background-color: var(--orange-background-color);
         border-radius: 0px;
         height: 30px;
-        width: 150px;
+        width: fit-content;
+
         &.register {
             background-color: var(--background-color);
             color: var(--orange-background-color);
+
             &:hover {
                 background-color: var(--orange-background-color);
                 color: var(--text-color);
@@ -172,7 +259,96 @@ nav {
         }
     }
 }
+
 ::ng-deep .mat-dialog-container {
     padding: 0px !important;
     overflow-x: hidden;
+}
+
+.hide-show {
+    cursor: pointer;
+}
+
+.game-img {
+    @extend .header-height;
+    background-size: contain;
+    background-color: #1E1E1E;
+}
+
+@media (max-width: 1095px) {
+
+    nav,
+    .mode {
+        display: none;
+    }
+
+    .header-conatiner {
+        grid-template-columns: 1fr 2fr 60px;
+
+        .menu-icon {
+            display: block;
+            height: 60px;
+            cursor: pointer;
+        }
+    }
+
+    .header-toggle {
+        display: none;
+    }
+
+
+    ::ng-deep .account-container {
+        padding-left: 0px;
+        background-color: #1E1E1E;
+
+        .avatar-container {
+            grid-column: span 3;
+            align-items: center;
+        }
+
+        .balance {
+            display: block;
+            font-size: 12px;
+            grid-column: span 2;
+            padding: 0px 10px;
+
+            .balance-amount {
+                font-size: 16px;
+                color: #FFC224;
+            }
+        }
+
+        .avatar {
+            display: block;
+            background-size: contain;
+        }
+
+        div {
+            &.account-nmbr {
+                display: none !important;
+            }
+        }
+
+        &::after {
+            content: none;
+        }
+    }
+
+}
+
+.currency-icon {
+    width: 70px;
+}
+
+@media screen and (max-width: 405px) {
+    .currency-icon {
+        width: 80px;
+    }
+
+    .game-img {
+        &.logged {
+            background-image: none !important;
+            background: #1E1E1E;
+        }
+    }
 }

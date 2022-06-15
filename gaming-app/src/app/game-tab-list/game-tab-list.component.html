@@ -12,16 +12,16 @@
     <div class="carousel-control-next-icon cursor-pointer h-100 d-flex align-items-center " (click)="scrollRight()">
     </div>
 </div>
-<div class="search-bar-container justify-content-between d-flex">
+<div class="search-bar-container ">
     <div class="search-box d-flex align-items-center">
         <input type="text" [(ngModel)]="searchText" mat-input placeholder="Search games">
         <mat-icon class="search-icon" (click)="setSearchTerm(searchText)">search</mat-icon>
     </div>
-    <div class="filter-container d-flex">
+    <div class="filter-container ">
         <div class="filter-list">
             <mat-form-field appearance="fill">
                 <mat-label>Providers </mat-label>
-                <mat-select>
+                <mat-select (selectionChange)="setSearchTerm($event.value)">
                     <mat-option *ngFor="let item of providers" [value]="item.viewValue">
                         {{item.value}}
                     </mat-option>
@@ -31,7 +31,7 @@
         <div class="filter-list">
             <mat-form-field appearance="fill">
                 <mat-label>Game Theme </mat-label>
-                <mat-select>
+                <mat-select (selectionChange)="setSearchTerm($event.value)">
                     <mat-option *ngFor="let item of gameTheme" [value]="item.viewValue">
                         {{item.value}}
                     </mat-option>
@@ -41,7 +41,7 @@
         <div class="filter-list">
             <mat-form-field appearance="fill">
                 <mat-label>Sort by </mat-label>
-                <mat-select>
+                <mat-select (selectionChange)="setSearchTerm($event.value)">
                     <mat-option *ngFor="let item of sortby" [value]="item.viewValue">
                         {{item.value}}
                     </mat-option>
@@ -50,4 +50,5 @@
         </div>
     </div>
 </div>
-<app-game-result [searchText]="searchText" [selectedGameList]="selectedItem" [selectedIndex]="selectedIndex"></app-game-result>
+<app-game-result [searchText]="searchText" [selectedGameList]="selectedItem" [selectedIndex]="selectedIndex">
+</app-game-result>

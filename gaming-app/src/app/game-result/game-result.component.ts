@@ -1,4 +1,5 @@
 import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
+// import { url } from 'inspector';
 
 @Component({
   selector: 'app-game-result',
@@ -6,7 +7,29 @@ import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
   styleUrls: ['./game-result.component.scss']
 })
 export class GameResultComponent implements OnInit {
-
+  imagesPath = '../../assets/images/game-select/';
+  images : any = [
+    {
+      id: 1,
+      name: 'All Game',
+      image: 'url(' + this.imagesPath + "1.jpg" +')'
+    },
+    {
+      id: 2,
+      name: 'Machine Game',
+      image: 'url(' + this.imagesPath + "2.jpg" +')'
+    },
+    {
+      id: 3,
+      name: 'Roulette Game',
+      image: 'url(' + this.imagesPath + "3.jpg" +')'
+    },
+    {
+      id: 4,
+      name: 'Cards Game',
+      image: 'url(' + this.imagesPath + "4.jpg" +')'
+    }
+  ];
   @Input() selectedGameList: { id: string, title: string, iconUrl: string };
   @Input() selectedIndex: number;
   private _searchText: string;
@@ -24,12 +47,12 @@ export class GameResultComponent implements OnInit {
   }
   @ViewChild('gameResult') gameResult: ElementRef;
   _itemList: { id: string, title: string, subTitle: string, iconUrl: string }[] = [
-    { id: Math.random() * 100 + 1 + '', title: 'item 1', subTitle: 'sub-title', iconUrl: '../../../assets/images/game-tab-list/game-1.png' },
-    { id: Math.random() * 100 + 1 + '', title: 'item 2', subTitle: 'sub-title', iconUrl: '../../../assets/images/game-tab-list/game-2.png' },
-    { id: Math.random() * 100 + 1 + '', title: 'item 3', subTitle: 'sub-title', iconUrl: '../../../assets/images/game-tab-list/game-3.png' },
-    { id: Math.random() * 100 + 1 + '', title: 'item 4', subTitle: 'sub-title', iconUrl: '../../../assets/images/game-tab-list/game-4.png' },
-    { id: Math.random() * 100 + 1 + '', title: 'item 5', subTitle: 'sub-title', iconUrl: '../../../assets/images/game-tab-list/game-5.png' },
-    { id: Math.random() * 100 + 1 + '', title: 'item 6', subTitle: 'sub-title', iconUrl: '../../../assets/images/game-tab-list/game-6.png' },
+    { id: Math.random() * 100 + 1 + '', title: 'item 1', subTitle: 'sub-title', iconUrl: '../../../assets/images/game-tab-list/1.png' },
+    { id: Math.random() * 100 + 1 + '', title: 'item 2', subTitle: 'sub-title', iconUrl: '../../../assets/images/game-tab-list/2.png' },
+    { id: Math.random() * 100 + 1 + '', title: 'item 3', subTitle: 'sub-title', iconUrl: '../../../assets/images/game-tab-list/3.png' },
+    { id: Math.random() * 100 + 1 + '', title: 'item 4', subTitle: 'sub-title', iconUrl: '../../../assets/images/game-tab-list/4.png' },
+    { id: Math.random() * 100 + 1 + '', title: 'item 5', subTitle: 'sub-title', iconUrl: '../../../assets/images/game-tab-list/5.png' },
+    { id: Math.random() * 100 + 1 + '', title: 'item 6', subTitle: 'sub-title', iconUrl: '../../../assets/images/game-tab-list/6.png' },
   ]
   constructor() {
     this.itemList = this._itemList;

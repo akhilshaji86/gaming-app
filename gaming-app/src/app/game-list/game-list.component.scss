@@ -1,28 +1,36 @@
 .game-list-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     height: 225px;
     gap: 10px;
+
     .item {
-        width: 33%;
         box-sizing: border-box;
     }
 }
+
 .game-list {
     height: 100%;
+
     table {
         width: 100%;
         background-color: var(--table-color);
         color: var(--text-color);
     }
+
     overflow-y: auto;
     overflow-x: hidden;
 }
+
 .mat-header-cell {
     background-color: var(--orange-background-color);
 }
+
 :host ::ng-deep {
     app-carousel {
         .carousel-container {
             padding: 0px;
+
             .carousel-indicators li {
                 width: 10px;
                 height: 9px;
@@ -31,14 +39,39 @@
             }
         }
     }
+
     .carousel-item {
         img {
             height: 205px;
             width: 100%;
         }
+
         .carousel-caption {
             padding: 0px;
             display: none;
+        }
+    }
+}
+
+@media screen and (max-width: 920px) {
+    .game-list-container {
+        grid-template-columns: 1fr;
+        height: auto;
+
+        .item {
+            height: auto;
+            min-height: 50vh;
+
+            &.ad-carousal {
+                min-height: max-content;
+            }
+        }
+
+    }
+
+    :host ::ng-deep .carousel-item {
+        img {
+            height: 100% ;
         }
     }
 }

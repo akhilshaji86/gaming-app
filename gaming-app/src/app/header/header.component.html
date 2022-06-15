@@ -1,4 +1,6 @@
-<div class="header-conatiner">
+<div class="header-conatiner" *ngIf="showHide">
+    <div class="w-100 game-img background-image " [class.logged]="isLoggedIn"
+        [ngStyle]="{'background-image':'url(../../assets/images/logo.png)'}"></div>
     <nav>
         <a class="mat-button" [class.active]="selectedTab==='home'" (click)="selectedTab='home'">
             <span class="mat-button-wrapper">Home </span>
@@ -20,32 +22,33 @@
 
 
     </nav>
-    <div class="account-container d-flex " [class.justify-content-lg-around]="isLoggedIn"
-        [class.not-logged]="!isLoggedIn" [class.white-theme]="theme==='white-theme'">
+    <div class="account-container" [class.justify-content-around]="isLoggedIn" [class.not-logged]="!isLoggedIn"
+        [class.white-theme]="theme==='white-theme'">
         <ng-container *ngIf="isLoggedIn">
-            <div class="d-flex flex-column p-lr-10 text-right">
+            <div class="d-flex flex-column account-nmbr p-lr-10 text-right">
                 <span> Account Number : {{accountNumber}} </span>
                 <span>cash : <span class="color-gold pl-10"> ₱ {{currency}}</span></span>
             </div>
-            <div class="d-flex p-10 position-relative">
+            <div class="d-flex p-10 account-nmbr position-relative">
                 <span class="plus"> +</span>
-                <span class="p-lr-10 header-btn bg-orange text-uppercase"> <b class="pl-3">Quick Deposit </b> </span>
+                <span class="p-lr-10 header-btn bg-orange text-uppercase"> <b class="pl-3">Quick Deposit </b>
+                </span>
                 <span class="p-lr-10 header-btn has-before text-uppercase"><b> Wallet </b></span>
                 <div class="slanted-black-line"></div>
             </div>
         </ng-container>
         <ng-container *ngIf="!isLoggedIn">
-            <div class="button-container d-flex">
-                <button mat-button
-                    class="d-flex align-items-center justify-content-center mat-button mr-3 text-uppercase"
+            <div class="button-container pr-2 d-flex">
+                <button mat-button class="d-flex align-items-center justify-content-center mat-button text-uppercase"
                     (click)="login()">Login</button>
                 <button mat-button
-                    class="d-flex align-items-center register  justify-content-center mat-button mr-5 text-uppercase"
+                    class="d-flex align-items-center register  justify-content-center mat-button text-uppercase"
                     (click)="register()">Register</button>
             </div>
         </ng-container>
-        <div class="position-relative">
-            <small class="position-absolute server-time">server time {{dateTime| date :'dd/mm/yyyy h:mm aa' }}</small>
+        <div class="position-relative mode">
+            <small class="position-absolute server-time">server time {{dateTime| date :'dd/mm/yyyy h:mm aa'
+                }}</small>
             <div class="btn-container d-flex">
                 <button class="mat-button mat-button-wrapper position-relative p-lr-10 pr-25"
                     (click)="toggleTheme(theme)">
@@ -64,21 +67,49 @@
                             (click)="countryImg = 'assets/images/flags/us.png';">
                             <div class="flag circle"
                                 [ngStyle]="{'background-image': 'url(../../assets/images/flags/us.png)'}"></div>
-                            <span>EN-US</span>
+                            <span class="span-text">EN-US</span>
                         </button>
                         <button class="d-flex position-relative justify-content-center" mat-menu-item
                             (click)="countryImg = 'assets/images/flags/uk.png';">
                             <div class="flag circle"
                                 [ngStyle]="{'background-image': 'url(../../assets/images/flags/uk.png)'}"></div>
-                            <span>EN-UK</span>
+                            <span class="span-text">EN-UK</span>
 
                         </button>
                     </mat-menu>
                 </button>
             </div>
         </div>
+        <div class="d-flex avatar-container">
+            <div class="avatar background-image"
+                [ngStyle]="{'background-image':'url(../../assets/images/icons/avatar.svg)'}"></div>
+            <div class="balance">
+                <div class="balance-text">Solaire Online Balance :</div>
+                <div class="balance-amount">₱ {{currency}}</div>
+            </div>
+            <div class="avatar currency-icon cursor-pointer background-image"
+                [ngStyle]="{'background-image':'url(../../assets/images/icons/currency-icon.svg)'}"></div>
+        </div>
     </div>
-    <div class="material-icons outsid-arrow">
-        arrow_drop_down
+    <div class="background-image menu-icon " [matMenuTriggerFor]="mainMenu"
+        [ngStyle]="{'background-image':'url(../../assets/images/icons/hamburger.svg)'}">
     </div>
+    <mat-menu class="main-menu" #mainMenu="matMenu">
+        <button class="main-menu" mat-menu-item>Home</button>
+        <button class="main-menu" mat-menu-item>Settings</button>
+        <button class="main-menu" mat-menu-item [matMenuTriggerFor]="subMenu">Help</button>
+    </mat-menu>
+    <mat-menu #subMenu="matMenu">
+        <button mat-menu-item>Item 1</button>
+        <button mat-menu-item>Item 2</button>
+    </mat-menu>
+
+    <div class="material-icons header-toggle outsid-arrow hide-show" (click)="show()">
+        arrow_drop_up
+    </div>
+</div>
+
+
+<div class="material-icons outsid-arrow hide-show outsid-arrow-up" (click)="show()" *ngIf="!showHide">
+    <a>arrow_drop_down</a>
 </div>

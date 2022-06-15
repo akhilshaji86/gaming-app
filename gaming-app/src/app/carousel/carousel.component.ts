@@ -9,11 +9,27 @@ import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 })
 export class CarouselComponent implements OnInit {
 
-  images = [700, 800, 807].map((n) => `https://picsum.photos/id/${n}/900/500`);
-
+  imagesPath = '../../assets/images/Main-Carousel/';
+  images : any = [
+    {
+      id: 1,
+      name: 'All Game',
+      image: this.imagesPath + '1.jpg'
+    },
+    {
+      id: 2,
+      name: 'Cards Game',
+      image: this.imagesPath + '2.jpg'
+    },
+    {
+      id: 3,
+      name: 'Roulette Game',
+      image: this.imagesPath + '3.jpg'
+    }
+  ];
   constructor(config: NgbCarouselConfig) {
     // customize default values of carousels used by this component tree
-    config.interval = 5000;
+    config.interval = 1000000;
     config.keyboard = true;
     config.pauseOnHover = false;
   }
@@ -21,3 +37,7 @@ export class CarouselComponent implements OnInit {
   }
 
 }
+
+
+// `https://picsum.photos/id/${n}/900/500`)
+// [700, 800, 807].map((n) => `../../assets/images/Main Carousel/${n}`);
