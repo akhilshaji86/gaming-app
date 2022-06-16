@@ -306,6 +306,10 @@ nav {
             align-items: center;
         }
 
+        &.not-logged {
+            grid-template-columns:  1fr;
+        }
+
         .balance {
             display: block;
             font-size: 12px;

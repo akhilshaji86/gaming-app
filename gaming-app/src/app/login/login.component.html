@@ -1,5 +1,5 @@
 <!-- <img src="../../assets/images/login.JPG" alt="" srcset=""> -->
-<div class="login-popup-container position-relative d-flex">
+<div class="login-popup-container position-relative">
     <mat-icon class="close-btn position-absolute" (click)="dialogRef.close()"> close</mat-icon>
     <div class="image-conatiner background-image"
         [ngStyle]="{'background-image': 'url(../../assets/images/games/login.png)'}">
@@ -13,7 +13,7 @@
             <b>Enjoy Your Games !</b>
         </div>
         <form #form="ngForm">
-            <div class="login-popup-container-content-form pt-3">
+            <div class="login-popup-container-content-form position-relative pt-3">
                 <div class="form-group">
                     <label for="">Username</label>
                     <input class="form-control input-class" id="" placeholder="Enter your Username">
@@ -39,7 +39,7 @@
                 <div class="form-group create-account-container position-absolute">
                     <div class="create-account">
                         <div class="pb-2 text-center">Don't have a account?</div>
-                        <button mat-button class="mr-5 mat-button">Create Account</button>
+                        <button mat-button class=" mat-button">Create Account</button>
                     </div>
                 </div>
             </div>

@@ -1,5 +1,5 @@
-<div class="login-popup-container d-flex position-relative">
-    <mat-icon class="close-btn position-absolute" (click)="dialogRef.close()"> close</mat-icon>
+<div class="login-popup-container position-relative">
+    <mat-icon class="close-btn position-absolute cursor-pointer" (click)="dialogRef.close()"> close</mat-icon>
     <div class="image-conatiner background-image"
         [ngStyle]="{'background-image': 'url(../../assets/images/games/login.png)'}">
     </div>
@@ -13,7 +13,7 @@
         </div>
         <form #form="ngForm">
             <div class="login-popup-container-content-form pt-3">
-                <div class="column-container d-flex justify-content-between ">
+                <div class="column-container  justify-content-between ">
                     <div class="first-column pr-3">
                         <div class="form-group">
                             <label for="">Username</label>
