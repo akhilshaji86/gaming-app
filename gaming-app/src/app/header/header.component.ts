@@ -10,7 +10,7 @@ import { RegisterComponent } from '../register/register.component';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  showHide=true;
+  showHide = true;
   selectedTab: string = 'home';
   accountNumber: number = 1234567890;
   currency = '1,031,567';
@@ -43,6 +43,11 @@ export class HeaderComponent implements OnInit {
       autoFocus: false,
       data: {
       }
+
+    }).afterClosed().subscribe((val) => {
+      if (val === 'createAccount') {
+        this.register();
+      }
     })
   }
   register() {
@@ -54,9 +59,13 @@ export class HeaderComponent implements OnInit {
       data: {
 
       }
-    });
+    }).afterClosed().subscribe((val) => {
+      if (val === 'login') {
+        this.login();
+      }
+    })
   }
-  show(){
+  show() {
     this.showHide = !this.showHide;
     console.log('showHide')
   }

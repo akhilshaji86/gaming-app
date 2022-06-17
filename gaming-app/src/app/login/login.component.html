@@ -12,24 +12,35 @@
             <div class="color-primary">Welcome back</div>
             <b>Enjoy Your Games !</b>
         </div>
-        <form #form="ngForm">
+        <form #form="ngForm" [formGroup]="loginForm">
             <div class="login-popup-container-content-form position-relative pt-3">
                 <div class="form-group">
-                    <label for="">Username</label>
-                    <input class="form-control input-class" id="" placeholder="Enter your Username">
+                    <label for="Username">Username</label>
+                    <input type="text" class="form-control input-class" id="Username" formControlName="username"
+                        placeholder="Enter your Username">
+                    <span class="text-danger"
+                        *ngIf="(loginForm.controls['username'].touched || submitted) && loginForm.controls['username'].errors?.['required']">
+                        *Name is required
+                    </span>
                 </div>
                 <div class="form-group">
-                    <label for="">Password</label>
-                    <input class="form-control input-class" id="" placeholder="Enter your Password">
+                    <label for="Password">Password</label>
+                    <input type="password" class="form-control input-class" id="Password" formControlName="password"
+                        placeholder="Enter your Password">
+                    <span class="text-danger" *ngIf="(loginForm.controls['password'].touched || submitted) && (loginForm.controls['password'].errors?.['required']
+                        )">
+                        *Password is required
+                    </span>
                 </div>
                 <div class="form-group">
                     <div class="form-check">
-                        <input type="checkbox" class="form-check-input" id="">
+                        <input type="checkbox" class="form-check-input">
                         <label class="form-check-label check-box-title" for="">Remember me</label>
                     </div>
                 </div>
                 <div class="form-group">
-                    <button mat-button class="mr-5" (click)="logIn()">Log In</button>
+                    <button [disabled]="loginForm.invalid" (click)="logIn()" mat-button class="mr-5">Log
+                        In</button>
                 </div>
                 <div class="form-group">
                     <div class="forget-username-password text-center">
@@ -39,7 +50,7 @@
                 <div class="form-group create-account-container position-absolute">
                     <div class="create-account">
                         <div class="pb-2 text-center">Don't have a account?</div>
-                        <button mat-button class=" mat-button">Create Account</button>
+                        <button mat-button class="mat-button" (click)="createAccount()">Create Account</button>
                     </div>
                 </div>
             </div>
