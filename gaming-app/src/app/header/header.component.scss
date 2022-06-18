@@ -196,7 +196,7 @@ nav {
 }
 
 .server-time {
-    top: -20px;
+    top: -14px;
     left: 20px;
     width: max-content;
     font-size: 10px;
@@ -272,7 +272,7 @@ nav {
 .game-img {
     @extend .header-height;
     background-size: contain;
-    background-color: #1E1E1E;
+    background-color: var(--background-color-tertiary);
 }
 
 @media (max-width: 1095px) {
@@ -299,7 +299,7 @@ nav {
 
     ::ng-deep .account-container {
         padding-left: 0px;
-        background-color: #1E1E1E;
+        background-color: var(--background-color-tertiary);
 
         .avatar-container {
             grid-column: span 3;
@@ -307,7 +307,7 @@ nav {
         }
 
         &.not-logged {
-            grid-template-columns:  1fr;
+            grid-template-columns: 1fr;
         }
 
         .balance {
@@ -352,7 +352,7 @@ nav {
     .game-img {
         &.logged {
             background-image: none !important;
-            background: #1E1E1E;
+            background: var(--background-color-tertiary);
         }
     }
 }

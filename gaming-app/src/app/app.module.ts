@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { ErrorHandler, NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -14,6 +14,10 @@ import { GameResultComponent } from './game-result/game-result.component';
 import { FooterComponent } from './footer/footer.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { GlobalErrorHandlerService } from './services/global-error-handler.service';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { ErrorInterceptorService } from './services/error-interceptor.service';
+import { ForgetUsernamePasswordComponent } from './forget-username-password/forget-username-password.component';
 
 
 @NgModule({
@@ -26,7 +30,8 @@ import { RegisterComponent } from './register/register.component';
     GameResultComponent,
     FooterComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    ForgetUsernamePasswordComponent
   ],
   imports: [
     BrowserModule,
@@ -35,9 +40,13 @@ import { RegisterComponent } from './register/register.component';
     FormsModule,
     ReactiveFormsModule,
     MaterialModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    // { provide: ErrorHandler, useClass: GlobalErrorHandlerService },
+    // { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptorService, multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

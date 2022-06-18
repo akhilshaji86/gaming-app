@@ -1,5 +1,6 @@
 @import "~@angular/material/theming";
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
 :root {
     --text-color: white;
     --background-color: #2a2a2a;
@@ -8,6 +9,7 @@
     --orange-background-color: #df6a2e;
     --background-color-dark: black;
 }
+
 /* You can add global styles to this file, and also import other style files */
 body {
     color: var(--text-color);
@@ -18,53 +20,68 @@ body {
 .flex-column {
     flex-direction: column;
 }
+
 .flex-row {
     flex-direction: row;
 }
+
 .p-lr-10 {
     padding: 0;
 }
+
 .pl-10 {
     padding-left: 10px;
 }
+
 .p-10 {
     padding: 10px;
 }
+
 .pr-25 {
     padding-right: 25px !important;
 }
+
 .pt-10 {
     padding-top: 10px;
 }
+
 .w-90 {
     width: 90%;
 }
+
 .color-gold {
     color: gold;
 }
+
 .header-btn {
     background-color: var(--background-color);
     color: var(--text-color);
     border: none;
     padding: 10px;
     cursor: pointer;
+
     &:hover {
         background-color: var(--background-color-secondary);
     }
 }
+
 .bg-orange {
     background-color: #df6a2e;
 }
+
 button:focus {
     outline: none;
 }
+
 .mat-cell,
 .mat-header-cell {
     color: var(--text-color);
 }
+
 .mat-row {
     border-bottom: 7px solid var(--table-border);
     cursor: pointer;
+
     &.active {
         background-color: var(--background-color-secondary);
     }
@@ -86,33 +103,40 @@ button:focus {
     -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
     background-color: var(--background-color-secondary);
 }
+
 .carousel-indicators li {
     &.active {
         background-color: var(--orange-background-color);
     }
 }
+
 .background-image {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
+
 .cursor-pointer {
     cursor: pointer;
 }
+
 mat-label {
     color: var(--text-color);
     display: flex;
     align-items: center;
     justify-content: center;
 }
+
 .mat-form-field-infix {
     color: var(--text-color);
     background-color: var(--table-color);
     border-radius: 5px;
 }
+
 .mat-form-field-appearance-fill .mat-form-field-flex {
     background-color: unset;
 }
+
 .mat-form-field-label-wrapper {
     top: -0.6em;
 }
@@ -120,9 +144,11 @@ mat-label {
 .mat-menu-content:not(:empty) {
     background-color: var(--orange-background-color);
 }
+
 .mat-menu-panel {
     border-radius: 0px !important;
 }
+
 .mat-menu-content {
     .circle {
         &.flag {
@@ -132,33 +158,39 @@ mat-label {
 }
 
 .mat-option {
+
     &:hover:not(.mat-option-disabled),
     &:focus:not(.mat-option-disabled) {
         background-color: var(--orange-background-color-dim);
         opacity: 0.8;
         color: var(--text-color);
     }
+
     &.mat-selected:not(.mat-option-multiple):not(.mat-option-disabled),
     &.mat-active {
         background-color: var(--background-color-secondary);
         color: var(--text-color);
     }
 }
+
 .mat-menu-item,
 .mat-option {
     background-color: var(--orange-background-color);
     color: var(--text-color);
+
     &:hover {
         background-color: var(--background-color-secondary);
         color: var(--text-color);
     }
 }
+
 .input-class {
     background-color: var(--table-color);
     color: var(--text-color);
     border-radius: 5px;
     padding: 5px 20px;
     border: 1px solid var(--background-color-secondary);
+
     &:focus {
         background-color: var(--table-color);
         border-color: var(--orange-background-color);
@@ -166,20 +198,32 @@ mat-label {
         box-shadow: 0 0 0 0.2rem rgb(223 106 46 / 25%);
         color: var(--text-color);
     }
+
     &:not(:focus) {
         color: var(--background-color-primary);
     }
 }
+
 .color-secondary {
     color: var(--background-color-secondary) !important;
 }
+
 .color-primary {
     color: var(--background-color-primary) !important;
 }
+
 input[type="checkbox"],
 input[type="radio"] {
     accent-color: var(--orange-background-color);
 }
 
+button {
+    color: var(--text-color);
+}
+
+.toaster {
+    background-color: var(--background-color-secondary);
+    color: var(--text-color);
+}
 
 /* Add application styles & imports to this file! */

@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { AppService } from '../app.service';
+import { AppService } from '../services/app.service';
 import { LoginComponent } from '../login/login.component';
 import { RegisterComponent } from '../register/register.component';
+import { ForgetUsernamePasswordComponent } from '../forget-username-password/forget-username-password.component';
 
 @Component({
   selector: 'app-header',
@@ -44,6 +45,25 @@ export class HeaderComponent implements OnInit {
       data: {
       }
 
+    }).afterClosed().subscribe((val) => {
+      if (val === 'createAccount') {
+        this.register();
+      }
+      if (val === 'forget-username-password') {
+        this.forgetPassword();
+      }
+    })
+  }
+
+  forgetPassword() {
+    this.matDialog.open(ForgetUsernamePasswordComponent, {
+      width: '465px',
+      height: '450px',
+      // disableClose: true,
+      autoFocus: false,
+      data: {
+
+      }
     }).afterClosed().subscribe((val) => {
       if (val === 'createAccount') {
         this.register();

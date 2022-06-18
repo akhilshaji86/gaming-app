@@ -1,4 +1,6 @@
-import { ChangeDetectorRef, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { ChangeDetectorRef, Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
+import { GameType } from '../models/game-list.model';
+import { GameService } from '../services/game.service';
 
 @Component({
   selector: 'app-game-tab-list',
@@ -8,11 +10,11 @@ import { ChangeDetectorRef, Component, ElementRef, OnInit, ViewChild } from '@an
 export class GameTabListComponent implements OnInit {
   @ViewChild('scrollContainer', { static: true }) scrollContainer: ElementRef;
   searchText: string;
-  selectedItem: { id: string, title: string, iconUrl: string } = { id: '', title: '', iconUrl: '' };
+  @Input() selectedItem: GameType = { id: '', title: '', iconUrl: '' };
   providers: { value: string, viewValue: string }[] = [{ value: 'item 1', viewValue: 'item_1' }, { value: 'item 2', viewValue: 'item_2' }, { value: 'item 3', viewValue: 'item_3' }]
   gameTheme: { value: string, viewValue: string }[] = [{ value: 'item 1', viewValue: 'item_1' }, { value: 'item 2', viewValue: 'item_2' }, { value: 'item 3', viewValue: 'item_3' }]
   sortby: { value: string, viewValue: string }[] = [{ value: 'item 1', viewValue: 'item_1' }, { value: 'item 2', viewValue: 'item_2' }, { value: 'item 3', viewValue: 'item_3' }]
-  gameContentList: { id: string, title: string, iconUrl: string }[] = [
+  @Input() gameContentList: GameType[] = [
     // { id: Math.random() * 100 + 1 + '', title: 'Title', iconUrl: '../../../assets/images/game-tab-list/game-1.png' },
     // { id: Math.random() * 100 + 1 + '', title: 'Title', iconUrl: '../../../assets/images/game-tab-list/game-2.png' },
     // { id: Math.random() * 100 + 1 + '', title: 'Title', iconUrl: '../../../assets/images/game-tab-list/game-3.png' },
@@ -27,27 +29,21 @@ export class GameTabListComponent implements OnInit {
     // { id: Math.random() * 100 + 1 + '', title: 'Title', iconUrl: '../../../assets/images/game-tab-list/game-5.png' },
     // { id: Math.random() * 100 + 1 + '', title: 'Title', iconUrl: '../../../assets/images/game-tab-list/game-5.png' },
     // { id: Math.random() * 100 + 1 + '', title: 'Title', iconUrl: '../../../assets/images/game-tab-list/game-6.png' }
-    { id: Math.random() * 100 + 1 + '', title: 'Title', iconUrl: '../../../assets/images/game-tab-list/1.png' },
-    { id: Math.random() * 100 + 1 + '', title: 'Title', iconUrl: '../../../assets/images/game-tab-list/2.png' },
-    { id: Math.random() * 100 + 1 + '', title: 'Title', iconUrl: '../../../assets/images/game-tab-list/3.png' },
-    { id: Math.random() * 100 + 1 + '', title: 'Title', iconUrl: '../../../assets/images/game-tab-list/4.png' },
-    { id: Math.random() * 100 + 1 + '', title: 'Title', iconUrl: '../../../assets/images/game-tab-list/5.png' },
-    { id: Math.random() * 100 + 1 + '', title: 'Title', iconUrl: '../../../assets/images/game-tab-list/5.png' },
-    { id: Math.random() * 100 + 1 + '', title: 'Title', iconUrl: '../../../assets/images/game-tab-list/5.png' },
-    { id: Math.random() * 100 + 1 + '', title: 'Title', iconUrl: '../../../assets/images/game-tab-list/5.png' },
-    { id: Math.random() * 100 + 1 + '', title: 'Title', iconUrl: '../../../assets/images/game-tab-list/5.png' },
-    { id: Math.random() * 100 + 1 + '', title: 'Title', iconUrl: '../../../assets/images/game-tab-list/6.png' },
-    { id: Math.random() * 100 + 1 + '', title: 'Title', iconUrl: '../../../assets/images/game-tab-list/7.png' },
-    { id: Math.random() * 100 + 1 + '', title: 'Title', iconUrl: '../../../assets/images/game-tab-list/8.png' },
-    { id: Math.random() * 100 + 1 + '', title: 'Title', iconUrl: '../../../assets/images/game-tab-list/7.png' },
-    { id: Math.random() * 100 + 1 + '', title: 'Title', iconUrl: '../../../assets/images/game-tab-list/8.png' }
+
   ];
   selectedIndex: number = 0;
   searchTextForSearch: string;
-  constructor(private cdRef: ChangeDetectorRef) { }
+  constructor(private cdRef: ChangeDetectorRef,
+    public  gameService: GameService) {
+    this.selectedItem = this.gameContentList[0];
+  }
 
   ngOnInit(): void {
-    this.selectedItem = this.gameContentList[0];
+    this.gameService.getGameTabListItems().subscribe(res => {
+      this.gameContentList = res;
+      this.selectedItem = this.gameContentList[0];
+      this.cdRef.detectChanges();
+    });
   }
 
   scrollLeft() {

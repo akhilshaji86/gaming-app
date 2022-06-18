@@ -1,8 +1,7 @@
 import { DOCUMENT } from '@angular/common';
 import { Component, Inject } from '@angular/core';
-import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
-import { AppService } from './app.service';
 import { Themes } from './constants/theme.constant';
+import { AppService } from './services/app.service';
 
 @Component({
   selector: 'app-root',

@@ -1,7 +1,7 @@
 <div>
     <div class="carousel-container">
-        <ngb-carousel *ngIf="images">
-            <ng-template ngbSlide *ngFor="let img of images">
+        <ngb-carousel *ngIf="config?.itemList">
+            <ng-template ngbSlide *ngFor="let img of config?.itemList">
                 <div class="wrapper">
                     <img class="w-100" [src]="img.image" alt="Random first slide">
                 </div>

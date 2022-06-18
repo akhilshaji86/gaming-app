@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
-import { AppService } from '../app.service';
+import { AppService } from '../services/app.service';
 
 @Component({
   selector: 'app-login',
@@ -31,8 +31,5 @@ export class LoginComponent implements OnInit {
   logIn() {  
     this.dialogRef.close();
     this.appService.setLoggedIn(true);
-  }
-  createAccount(){
-    this.dialogRef.close('createAccount');
   }
 }

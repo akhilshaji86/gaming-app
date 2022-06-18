@@ -15,6 +15,7 @@ export const Themes = {
         '--expand-background-color': '#bebebe',
         '--dull-background-color': '#aeaeae',
         '--theme-color': 'white',
+        '--background-color-tertiary':'#cccccc',
     },
     'dark-theme': {
         '--text-color': '#ffffff',
@@ -32,5 +33,7 @@ export const Themes = {
         '--expand-background-color': '#414141',
         '--dull-background-color': '#515151',
         '--theme-color': 'black',
+        '--background-color-tertiary': '#1E1E1E',
+
     }
 }

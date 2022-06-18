@@ -2,7 +2,7 @@
     .
     <div class="carousel-control-prev-icon cursor-pointer h-100 d-flex align-items-center" (click)="scrollLeft()">
     </div>
-    <div class="option-container d-flex" #scrollContainer>
+    <div class="option-container d-flex" #scrollContainer *ngIf="gameContentList && selectedItem">
         <div class="label-container d-flex flex-column" *ngFor="let item of gameContentList; let index=index"
             (click)="selectedItem=item;selectedIndex=index" [class.active]="selectedItem.id ===item.id ">
             <div class="background-image icons" [ngStyle]="{'background-image': 'url('+item.iconUrl+')'}"></div>
@@ -50,5 +50,5 @@
         </div>
     </div>
 </div>
-<app-game-result [searchText]="searchText" [selectedGameList]="selectedItem" [selectedIndex]="selectedIndex">
+<app-game-result [searchText]="searchText"  [selectedIndex]="selectedIndex">
 </app-game-result>

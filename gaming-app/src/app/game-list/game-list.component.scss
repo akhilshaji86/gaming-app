@@ -61,6 +61,7 @@
         .item {
             height: auto;
             min-height: 50vh;
+            max-height: 80vh;
 
             &.ad-carousal {
                 min-height: max-content;

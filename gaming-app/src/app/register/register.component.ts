@@ -14,9 +14,9 @@ export class RegisterComponent implements OnInit {
     username: new FormControl('', [Validators.required]),
     password: new FormControl('', [Validators.required]),
     confirmPassword: new FormControl('', [Validators.required, this.passwordMatchValidator.bind(this)]),
-    country: new FormControl('', [Validators.required]),
+    country: new FormControl(''),
     email: new FormControl('', [Validators.required, Validators.email]),
-    promoCode: new FormControl('', [Validators.required])
+    promoCode: new FormControl('')
   });
   constructor(public dialogRef: MatDialogRef<RegisterComponent>) { }
 
