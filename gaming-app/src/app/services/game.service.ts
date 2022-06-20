@@ -12,6 +12,7 @@ export class GameService {
   gameTabList: BehaviorSubject<GameType[]> = new BehaviorSubject(this.val);
 
   constructor(private http: HttpClient) { }
+  
   getGameListConfig(): Observable<GameList> {
     //
     const gameList: GameList = {
@@ -23,6 +24,8 @@ export class GameService {
       { index: 5, gameName: 'Game 3', jackpot: '1,031,567', time: '12:00' }]
     }
     return of(gameList);
+    // return http.post('/api/forget-username-password', { login, email });
+
   }
 
   getImageList(): Observable<ImageItemList[]> {

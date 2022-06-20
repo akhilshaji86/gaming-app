@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { CaroselConfig } from '../carousel/carousel.component';
 import { SlotGame } from '../models/game-list.model';
@@ -46,12 +46,15 @@ export class GameListComponent implements OnInit {
   // { id: Math.random() * 100 + 1 + '', title: 'Title', iconUrl: '../../../assets/images/game-tab-list/8.png' }]
   // };
 
-
-  gamesList: MatTableDataSource<SlotGame> = new MatTableDataSource();
   imagesPath = '../../assets/images/Main-Carousel/';
   gameConfig: CaroselConfig = {
-    itemList: []
-  }
+    itemList: [
+      { id: 1, name: 'All Game', image: this.imagesPath + '4.png' },
+      { id: 1, name: 'All Game', image: this.imagesPath + '5.png' },
+      { id: 1, name: 'All Game', image: this.imagesPath + '4.png' },
+    ]
+  };
+  gamesList: MatTableDataSource<SlotGame> = new MatTableDataSource(); //table
   //{
   //   itemList: [
   //     {
@@ -71,12 +74,20 @@ export class GameListComponent implements OnInit {
   //     }
   //   ]
   // };
-  constructor(public  gameService: GameService) {
+  constructor(public gameService: GameService, private cdr: ChangeDetectorRef) {
     // this.gameConfig.itemList = data.imageList;
-
+    
   }
 
   ngOnInit(): void {
+    this.gameConfig = {
+      itemList: [
+        { id: 1, name: 'All Game', image: this.imagesPath + '4.png' },
+        { id: 1, name: 'All Game', image: this.imagesPath + '5.png' },
+        { id: 1, name: 'All Game', image: this.imagesPath + '4.png' },
+      ]
+    };
+    this.cdr.detectChanges();
     this.gameService.getGameListConfig().subscribe(data => {
       // this.gameConfig.itemList = data.imageList;
       this.gamesList.data = data.slotGames;
@@ -84,7 +95,7 @@ export class GameListComponent implements OnInit {
     });
 
     this.gameService.getImageList().subscribe(data => {
-      this.gameConfig.itemList = data;
+      // this.gameConfig.itemList = data;
     });
   }
 

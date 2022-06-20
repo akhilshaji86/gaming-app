@@ -1,6 +1,6 @@
 <div class="result-container position-relative" #gameResult>
     <ng-container *ngIf="itemList">
-        <div class="result-item-container" [class.studio]="index>3" *ngFor="let item of itemList ;let index=index">
+        <div class="result-item-container" [class.studio]="index>3" *ngFor="let item of (itemList) ;let index=index">
             <div class="result-item item-des position-relative">
                 <h3 class="position-absolute" *ngIf="selectedGameList && index===0">{{selectedGameList.title}}
                     {{selectedIndex+1}}</h3>
@@ -15,7 +15,7 @@
             <!-- <div class="result-item " [class.last-item]="index>3 && unitItem===3"
                 *ngFor="let unit of [1,2,3]; let unitItem=index;"> -->
                 <div class="result-item " [class.last-item]="index>3 && unitItem===3"
-                    *ngFor="let img of images; let unitItem=index;">
+                    *ngFor="let img of (index>3?studioImges:images); let unitItem=index;">
                 <!-- <div class="jackpot background-image"
                     [ngStyle]="{'background-image': '{{ img.image }}'}"></div> -->
                     <div class="jackpot background-image"

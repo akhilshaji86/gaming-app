@@ -30,6 +30,23 @@ export class GameResultComponent implements OnInit {
       image: 'url(' + this.imagesPath + "4.jpg" +')'
     }
   ];
+  studioImges=[
+    {
+      id: 1,
+      name: 'All Game',
+      image: 'url(' + this.imagesPath + "Baccarat.png" + ')'
+    },
+    {
+      id: 2,
+      name: 'Machine Game',
+      image: 'url(' + this.imagesPath + "Baccarat.png" + ')'
+    },
+    {
+      id: 3,
+      name: 'Roulette Game',
+      image: 'url(' + this.imagesPath + "Baccarat.png" + ')'
+    },
+  ]
   @Input() selectedGameList: { id: string, title: string, iconUrl: string };
   @Input() selectedIndex: number;
   private _searchText: string;

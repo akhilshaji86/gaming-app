@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, Input, OnInit } from '@angular/core';
 import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 import { ImageItemList } from '../models/game-list.model';
 
@@ -11,7 +11,7 @@ import { ImageItemList } from '../models/game-list.model';
 export class CarouselComponent implements OnInit {
 
   imagesPath = '../../assets/images/Main-Carousel/';
-  @Input() config: CaroselConfig = {
+  private _config: CaroselConfig = {
     itemList: [
       {
         id: 1,
@@ -29,8 +29,18 @@ export class CarouselComponent implements OnInit {
         image: this.imagesPath + '3.jpg'
       }
     ]
+  };
+  get config(): CaroselConfig {
+    return this._config;
   }
-  constructor(private ngbConfig: NgbCarouselConfig) {
+  @Input()
+  set config(value: CaroselConfig) {
+    if (value && JSON.stringify(value) !== JSON.stringify(this._config)) {
+      this._config = value;
+      this.cdr.detectChanges();
+    }
+  }
+  constructor(private ngbConfig: NgbCarouselConfig, private cdr: ChangeDetectorRef) {
 
   }
   ngOnInit(): void {
@@ -38,7 +48,7 @@ export class CarouselComponent implements OnInit {
     this.ngbConfig.interval = this.config.interval || 30000;
     this.ngbConfig.keyboard = this.config.keyboard || false;
     this.ngbConfig.pauseOnHover = this.config.pauseOnHover || false;
-    
+
   }
 
 }
